@@ -2,7 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyEvent;
 
-public class ColisionDosBolas extends JFrame {
+public class ColisionDeBolas extends JFrame {
 
     private static final int WIDTH = 752;
     private static final int HEIGHT = 400;
@@ -13,7 +13,7 @@ public class ColisionDosBolas extends JFrame {
     private Ball ball1, ball2;
     private JLabel backgroundLabel;
 
-    public ColisionDosBolas() {
+    public ColisionDeBolas() {
     	
     	  MensajeAyuda();
         setTitle("Colisión de Bolas");
@@ -24,7 +24,7 @@ public class ColisionDosBolas extends JFrame {
 
         // Crear el fondo como un JLabel
         backgroundLabel = new JLabel();
-        backgroundLabel.setIcon(new ImageIcon("C:\\Users\\usuario\\Downloads\\pool.jpeg"));
+        backgroundLabel.setIcon(new ImageIcon("file:///C:/Users/Alumno/eclipse-workspace/PoolJUEGO/src/pool.jpeg"));
         backgroundLabel.setBounds(0, 0, WIDTH, HEIGHT);
         backgroundLabel.setOpaque(true);
         backgroundLabel.setBackground(Color.GREEN);
@@ -114,14 +114,14 @@ public class ColisionDosBolas extends JFrame {
     	    if (ball1.x - BALL_RADIUS <= 0 || ball1.x + BALL_RADIUS >= WIDTH) {
     	        ball1.speedX = -ball1.speedX;
     	    }
-    	    if (ball1.y - BALL_RADIUS <= 0 || ball1.y + BALL_RADIUS >= HEIGHT) {
+    	    if (ball1.y - BALL_RADIUS <= 0 || ball1.y + BALL_RADIUS >= HEIGHT-30) {
     	        ball1.speedY = -ball1.speedY;
     	    }
 
     	    if (ball2.x - BALL_RADIUS <= 0 || ball2.x + BALL_RADIUS >= WIDTH) {
     	        ball2.speedX = -ball2.speedX;
     	    }
-    	    if (ball2.y - BALL_RADIUS <= 0 || ball2.y + BALL_RADIUS >= HEIGHT) {
+    	    if (ball2.y - BALL_RADIUS <= 0 || ball2.y + BALL_RADIUS >= HEIGHT-30) {
     	        ball2.speedY = -ball2.speedY;
     	    }
             ball1.speedX *= FRICTION;
@@ -183,7 +183,7 @@ public class ColisionDosBolas extends JFrame {
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
-            ColisionDosBolas simulation = new ColisionDosBolas();
+            ColisionDeBolas simulation = new ColisionDeBolas();
             simulation.setVisible(true);
         });
     }
