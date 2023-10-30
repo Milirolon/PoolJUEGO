@@ -111,14 +111,14 @@ public class ColisionDeBolas extends JFrame {
     	    }
 
     	    // Verificar colisiones con las paredes y cambiar la dirección
-    	    if (ball1.x - BALL_RADIUS <= 0 || ball1.x + BALL_RADIUS >= WIDTH) {
+    	    if (ball1.x - BALL_RADIUS <= 0 || ball1.x + BALL_RADIUS >= WIDTH-30) {
     	        ball1.speedX = -ball1.speedX;
     	    }
     	    if (ball1.y - BALL_RADIUS <= 0 || ball1.y + BALL_RADIUS >= HEIGHT-30) {
     	        ball1.speedY = -ball1.speedY;
     	    }
 
-    	    if (ball2.x - BALL_RADIUS <= 0 || ball2.x + BALL_RADIUS >= WIDTH) {
+    	    if (ball2.x - BALL_RADIUS <= 0 || ball2.x + BALL_RADIUS >= WIDTH-30) {
     	        ball2.speedX = -ball2.speedX;
     	    }
     	    if (ball2.y - BALL_RADIUS <= 0 || ball2.y + BALL_RADIUS >= HEIGHT-30) {
